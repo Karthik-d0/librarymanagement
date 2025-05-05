@@ -110,6 +110,9 @@ CREATE TABLE reports (
     UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+ALTER TABLE books
+ADD COLUMN CoverImageURL VARCHAR(255) AFTER Publisher;
+
 -- Index creation for performance optimization
 CREATE INDEX idx_transactions_user ON transactions(UserID);
 CREATE INDEX idx_transactions_book ON transactions(BookID);

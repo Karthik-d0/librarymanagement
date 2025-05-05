@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NITK Library Management System</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="scene">
+    <div class="book" id="book">
+      <div class="book-spine">
+        <span>NITK LIBRARY</span>
+      </div>
+      
+      <div class="book-edge"></div>
+      
+      <div class="book-cover" id="book-cover">
+        <div class="cover-content">
+          <div style="width: 120px; height: 120px; background: #f8d775; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 30px; border: 3px solid #e6c455; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+            <div style="font-size: 40px; font-weight: bold; color: #8b4513;">NITK</div>
+          </div>
+          <h1>NITK Library Management System</h1>
+          <p>Knowledge is power - Francis Bacon</p>
+          <button class="cover-btn" id="open-book">OPEN BOOK</button>
+        </div>
+      </div>
+      
+      <!-- Login Page -->
+      <div class="page login-page" id="login-page">
+        <div class="page-front">
+          <div class="form-container">
+            <h2>Login</h2>
+            <form>
+              <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" required>
+              </div>
+              <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+              </div>
+              <button type="submit" class="form-btn">Login</button>
+            </form>
+            <div class="switch-link">
+              Don't have an account?
+              <button class="switch-btn" id="to-signup">Sign up</button>
+            </div>
+          </div>
+          
+          <div class="book-decoration">
+            <span class="ornament">❦</span> NITK Library <span class="ornament">❦</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Signup Page -->
+      <div class="page signup-page" id="signup-page">
+        <div class="page-front">
+          <div class="form-container">
+            <h2>Sign Up</h2>
+            <form>
+              <div class="input-group">
+                <label for="new-username">Username</label>
+                <input type="text" id="new-username" required>
+              </div>
+              <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+              </div>
+              <div class="input-group">
+                <label for="new-password">Password</label>
+                <input type="password" id="new-password" required>
+              </div>
+              <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" required>
+              </div>
+              <button type="submit" class="form-btn">Sign Up</button>
+            </form>
+            <div class="switch-link">
+              Already have an account?
+              <button class="switch-btn" id="to-login">Login</button>
+            </div>
+          </div>
+          
+          <div class="book-decoration">
+            <span class="ornament">❦</span> NITK Library <span class="ornament">❦</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const book = document.getElementById("book");
+      const bookCover = document.getElementById("book-cover");
+      const loginPage = document.getElementById("login-page");
+      const signupPage = document.getElementById("signup-page");
+      const openBookBtn = document.getElementById("open-book");
+      const toSignupBtn = document.getElementById("to-signup");
+      const toLoginBtn = document.getElementById("to-login");
+  
+      // Open the book when the cover button is clicked
+      openBookBtn.addEventListener("click", function() {
+        book.classList.add("book-opened");
+        book.classList.remove("show-signup");
+      });
+  
+      // Show signup page
+      toSignupBtn.addEventListener("click", function() {
+        book.classList.add("show-signup");
+      });
+  
+      // Show login page
+      toLoginBtn.addEventListener("click", function() {
+        book.classList.remove("show-signup");
+      });
+    });
+  </script>
+  
+</body>
+</html>
